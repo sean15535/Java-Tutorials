@@ -1,6 +1,6 @@
 # Java Tutorial Repository
 
-Welcome to my **Java Tutorial Repository**! This repository will serve as a comprehensive collection of tutorials and resources that I will be using throughout my journey of learning Java. It includes code examples, explanations, and practical exercises to help you (and me) build a strong foundation in Java programming.
+Welcome to my **Java Tutorial Repository**! This repository will serve as a comprehensive collection of tutorials and resources that I will be using throughout my journey of learning Java. It includes code examples, explanations, and practical exercises to help you (and me) build a strong foundation in Java programming. Every tasks and exercise is from University of the People, Excercism and Freecodecamp.
 
 ## Table of Contents
 
@@ -36,7 +36,7 @@ To follow along with the tutorials and run the examples on your local machine, f
 3. **Clone This Repository**:
    - Clone this repository to your local machine using the following command:
      ```bash
-     git clone https://github.com/yourusername/java-tutorial-repository.git
+     git clone https://github.com/sean15535/Java-Tutorials.git
      ```
 
 4. **Navigate to the Tutorial Folder**:
