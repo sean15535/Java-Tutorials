@@ -32,4 +32,15 @@ public class BankAccount {
     public String getAccountHolderName() {
         return accountHolderName;
     }
+
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount("Alice", 1000.0);
+        System.out.println("Account holder: " + account.getAccountHolderName());
+        System.out.println("Initial balance: " + account.getBalance());
+        account.deposit(500.0);
+        System.out.println("After deposit: " + account.getBalance());
+        account.withdraw(200.0);
+        System.out.println("After withdrawal: " + account.getBalance());
+        System.out.println("Interest rate: " + BankAccount.getInterestRate());
+    }
 }
