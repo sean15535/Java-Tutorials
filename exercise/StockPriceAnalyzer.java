@@ -10,36 +10,52 @@ import java.util.Arrays;
  * - Finding the maximum stock price
  * - Counting the occurrence of a specific stock price
  * - Computing the cumulative sum of stock prices
-
  */
-
 public class StockPriceAnalyzer {
 
     /**
-     * Calculates the average stock price from a float array.
-     *
-     * @param prices An array of float stock prices.
-     * @return The average stock price as a float.
+     * Calculates the average stock price from an array.
      */
     public static float calculateAveragePrice(float[] prices) {
         float sum = 0;
         for (float price : prices) {
-            sum += price; // Add each price to the sum
+            sum += price;
         }
-        return sum / prices.length; // Calculate average
+        return sum / prices.length;
     }
 
     /**
-     * Finds the maximum stock price in the array.
-     *
-     * @param prices An array of float stock prices.
-     * @return The maximum stock price as a float.
+     * Calculates the average stock price from an ArrayList.
+     */
+    public static float calculateAveragePrice(ArrayList<Float> prices) {
+        float sum = 0;
+        for (float price : prices) {
+            sum += price;
+        }
+        return sum / prices.size();
+    }
+
+    /**
+     * Finds the maximum stock price in an array.
      */
     public static float findMaximumPrice(float[] prices) {
-        float max = prices[0]; // Initialize max with the first element
+        float max = prices[0];
         for (float price : prices) {
             if (price > max) {
-                max = price; // Update max if current price is greater
+                max = price;
+            }
+        }
+        return max;
+    }
+
+    /**
+     * Finds the maximum stock price in an ArrayList.
+     */
+    public static float findMaximumPrice(ArrayList<Float> prices) {
+        float max = prices.get(0);
+        for (float price : prices) {
+            if (price > max) {
+                max = price;
             }
         }
         return max;
@@ -47,62 +63,56 @@ public class StockPriceAnalyzer {
 
     /**
      * Counts how many times a specific stock price appears in the array.
-     *
-     * @param prices An array of float stock prices.
-     * @param targetPrice The price to count occurrences of.
-     * @return The number of times targetPrice occurs in the array.
      */
     public static int countOccurrences(float[] prices, float targetPrice) {
         int count = 0;
         for (float price : prices) {
             if (price == targetPrice) {
-                count++; // Increment count for every match
+                count++;
             }
         }
         return count;
     }
 
     /**
-     * Computes the cumulative sum of stock prices using an ArrayList.
-     *
-     * @param prices An ArrayList of float stock prices.
-     * @return A new ArrayList containing the cumulative sums.
+     * Computes the cumulative sum of stock prices from an ArrayList.
      */
     public static ArrayList<Float> computeCumulativeSum(ArrayList<Float> prices) {
         ArrayList<Float> cumulativeSum = new ArrayList<>();
         float sum = 0;
         for (float price : prices) {
-            sum += price; // Add current price to running total
-            cumulativeSum.add(sum); // Store the cumulative sum
+            sum += price;
+            cumulativeSum.add(sum);
         }
         return cumulativeSum;
     }
 
     /**
-     * The main method to demonstrate and test the functionalities.
-     *
-     * @param args Command-line arguments (not used here).
+     * Main method to run and test all functionalities.
      */
     public static void main(String[] args) {
-        // Sample stock prices for 10 days stored in both array and ArrayList
         float[] stockPricesArray = {100.5f, 102.3f, 101.2f, 99.8f, 103.4f, 105.1f, 104.6f, 100.0f, 99.8f, 102.3f};
         ArrayList<Float> stockPricesList = new ArrayList<>(Arrays.asList(
             100.5f, 102.3f, 101.2f, 99.8f, 103.4f, 105.1f, 104.6f, 100.0f, 99.8f, 102.3f));
 
-        // Calculate and display the average stock price
-        float average = calculateAveragePrice(stockPricesArray);
-        System.out.println("Average Stock Price: " + average);
+        // Average prices
+        float avgArray = calculateAveragePrice(stockPricesArray);
+        float avgList = calculateAveragePrice(stockPricesList);
+        System.out.println("Average Stock Price (Array): " + avgArray);
+        System.out.println("Average Stock Price (ArrayList): " + avgList);
 
-        // Find and display the maximum stock price
-        float max = findMaximumPrice(stockPricesArray);
-        System.out.println("Maximum Stock Price: " + max);
+        // Maximum prices
+        float maxArray = findMaximumPrice(stockPricesArray);
+        float maxList = findMaximumPrice(stockPricesList);
+        System.out.println("Maximum Stock Price (Array): " + maxArray);
+        System.out.println("Maximum Stock Price (ArrayList): " + maxList);
 
-        // Count and display occurrences of a specific stock price
+        // Occurrence count
         float target = 102.3f;
-        int count = countOccurrences(stockPricesArray, target);
-        System.out.println("Occurrences of " + target + ": " + count);
+        int occurrences = countOccurrences(stockPricesArray, target);
+        System.out.println("Occurrences of " + target + ": " + occurrences);
 
-        // Compute and display cumulative sum of stock prices
+        // Cumulative sum
         ArrayList<Float> cumulative = computeCumulativeSum(stockPricesList);
         System.out.println("Cumulative Sum of Stock Prices: " + cumulative);
     }
