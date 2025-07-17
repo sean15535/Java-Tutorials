@@ -28,4 +28,8 @@ public class BankAccount {
     public static void setInterestRate(double newRate) { // Static method
         interestRate = newRate;
     }
+
+    public String getAccountHolderName() {
+        return accountHolderName;
+    }
 }
