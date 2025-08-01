@@ -1,3 +1,7 @@
+/**
+ * Car class implements Vehicle and CarVehicle.
+ * Stores and retrieves details specific to cars.
+ */
 public class Car implements Vehicle, CarVehicle {
     private String make, model, fuelType;
     private int year, numberOfDoors;
